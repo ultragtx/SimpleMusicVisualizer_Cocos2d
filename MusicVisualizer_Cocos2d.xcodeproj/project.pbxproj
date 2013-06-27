@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C10BF6D4177C1BB2003D996B /* CocosVisualizer.m in Sources */ = {isa = PBXBuildFile; fileRef = C10BF6D3177C1BB2003D996B /* CocosVisualizer.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		C10BF6DA177C29BE003D996B /* ParticleSys.plist in Resources */ = {isa = PBXBuildFile; fileRef = C10BF6D9177C29BE003D996B /* ParticleSys.plist */; };
+		C10BF6DD177C2D70003D996B /* CustomParticleSystem.mm in Sources */ = {isa = PBXBuildFile; fileRef = C10BF6DC177C2D70003D996B /* CustomParticleSystem.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		C120401F177BD9630016C27D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C120401E177BD9630016C27D /* QuartzCore.framework */; };
 		C1204021177BD9630016C27D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1204020177BD9630016C27D /* OpenGLES.framework */; };
 		C1204023177BD9630016C27D /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1204022177BD9630016C27D /* OpenAL.framework */; };
@@ -148,6 +151,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C10BF6D2177C1BB2003D996B /* CocosVisualizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosVisualizer.h; sourceTree = "<group>"; };
+		C10BF6D3177C1BB2003D996B /* CocosVisualizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosVisualizer.m; sourceTree = "<group>"; };
+		C10BF6D9177C29BE003D996B /* ParticleSys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ParticleSys.plist; sourceTree = "<group>"; };
+		C10BF6DB177C2D6F003D996B /* CustomParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomParticleSystem.h; sourceTree = "<group>"; };
+		C10BF6DC177C2D70003D996B /* CustomParticleSystem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CustomParticleSystem.mm; sourceTree = "<group>"; };
 		C120401B177BD9630016C27D /* MusicVisualizer_Cocos2d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicVisualizer_Cocos2d.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C120401E177BD9630016C27D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C1204020177BD9630016C27D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -504,6 +512,11 @@
 				C12041C7177BD9690016C27D /* HelloWorldLayer.m */,
 				C12041C9177BD9690016C27D /* IntroLayer.h */,
 				C12041CA177BD9690016C27D /* IntroLayer.m */,
+				C10BF6DB177C2D6F003D996B /* CustomParticleSystem.h */,
+				C10BF6DC177C2D70003D996B /* CustomParticleSystem.mm */,
+				C10BF6D2177C1BB2003D996B /* CocosVisualizer.h */,
+				C10BF6D3177C1BB2003D996B /* CocosVisualizer.m */,
+				C10BF6D9177C29BE003D996B /* ParticleSys.plist */,
 				C1204033177BD9630016C27D /* Resources */,
 				C120404B177BD9630016C27D /* libs */,
 				C12041BF177BD9690016C27D /* Supporting Files */,
@@ -976,6 +989,7 @@
 				C120404A177BD9630016C27D /* iTunesArtwork in Resources */,
 				C12041A3177BD9680016C27D /* ChangeLog in Resources */,
 				C12041DA177BDB1D0016C27D /* DemoSong.m4a in Resources */,
+				C10BF6DA177C29BE003D996B /* ParticleSys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1100,6 +1114,8 @@
 				C12041CB177BD9690016C27D /* IntroLayer.m in Sources */,
 				C12041D7177BDAAF0016C27D /* MeterTable.cpp in Sources */,
 				C12041D8177BDAAF0016C27D /* ViewController.m in Sources */,
+				C10BF6D4177C1BB2003D996B /* CocosVisualizer.m in Sources */,
+				C10BF6DD177C2D70003D996B /* CustomParticleSystem.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1205,6 +1221,7 @@
 				C12041D0177BD9690016C27D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

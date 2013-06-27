@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "cocos2d.h"
+#import "CocosVisualizer.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface ViewController ()
@@ -38,7 +40,36 @@
 //    self.visualizer = [[VisualizerView alloc] initWithFrame:self.view.frame];
 //    [_visualizer setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
 //    [_backgroundView addSubview:_visualizer];
-  
+    
+    CCGLView *glView = [CCGLView viewWithFrame:CGRectMake(0, 0, 480, 320)
+								   pixelFormat:kEAGLColorFormatRGB565
+								   depthFormat:0
+							preserveBackbuffer:NO
+									sharegroup:nil
+								 multiSampling:NO
+							   numberOfSamples:0];
+    
+    CCDirector *director_ = (CCDirectorIOS*) [CCDirector sharedDirector];
+    director_.wantsFullScreenLayout = YES;
+	[director_ setDisplayStats:YES];
+	[director_ setAnimationInterval:1.0/60];
+	[director_ setView:glView];
+	[director_ setProjection:kCCDirectorProjection2D];
+	if( ! [director_ enableRetinaDisplay:YES] )
+		CCLOG(@"Retina Display Not supported");
+	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
+	CCFileUtils *sharedFileUtils = [CCFileUtils sharedFileUtils];
+	[sharedFileUtils setEnableFallbackSuffixes:NO];				// Default: NO. No fallback suffixes are going to be used
+	[sharedFileUtils setiPhoneRetinaDisplaySuffix:@"-hd"];		// Default on iPhone RetinaDisplay is "-hd"
+	[sharedFileUtils setiPadSuffix:@"-ipad"];					// Default on iPad is "ipad"
+	[sharedFileUtils setiPadRetinaDisplaySuffix:@"-ipadhd"];	// Default on iPad RetinaDisplay is "-ipadhd"
+	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
+
+    [_backgroundView addSubview:director_.view];
+    
+    [director_ runWithScene: [CocosVisualizer scene]];
+//    [director_ setDelegate:self];
+    
     [self configureAudioPlayer];
 }
 
@@ -54,7 +85,7 @@
     
     self.backgroundView = [[UIView alloc] initWithFrame:frame];
     [_backgroundView setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
-    [_backgroundView setBackgroundColor:[UIColor blackColor]];
+    [_backgroundView setBackgroundColor:[UIColor yellowColor]];
     
     [self.view addSubview:_backgroundView];
     
@@ -218,6 +249,48 @@
   if (error) {
     NSLog(@"Error setting category: %@", [error description]);
   }
+}
+
+
+#pragma mark -
+
+// The available orientations should be defined in the Info.plist file.
+// And in iOS 6+ only, you can override it in the Root View controller in the "supportedInterfaceOrientations" method.
+// Only valid for iOS 6+. NOT VALID for iOS 4 / 5.
+-(NSUInteger)supportedInterfaceOrientations {
+	
+	// iPhone only
+	if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
+		return UIInterfaceOrientationMaskLandscape;
+	
+	// iPad only
+	return UIInterfaceOrientationMaskLandscape;
+}
+
+// Supported orientations. Customize it for your own needs
+// Only valid on iOS 4 / 5. NOT VALID for iOS 6.
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+	// iPhone only
+	if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
+		return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+	
+	// iPad only
+	// iPhone only
+	return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+}
+
+// This is needed for iOS4 and iOS5 in order to ensure
+// that the 1st scene has the correct dimensions
+// This is not needed on iOS6 and could be added to the application:didFinish...
+-(void) directorDidReshapeProjection:(CCDirector*)director
+{
+	if(director.runningScene == nil) {
+        NSLog(@"directorDidReshapeProjection");
+		// Add the first scene to the stack. The director will draw it immediately into the framebuffer. (Animation is started automatically when the view is displayed.)
+		// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
+//		[director runWithScene: [IntroLayer scene]];
+	}
 }
 
 @end

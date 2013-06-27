@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "cocos2d.h"
 
-@interface ViewController : UIViewController <MPMediaPickerControllerDelegate>
+@interface ViewController : UIViewController <MPMediaPickerControllerDelegate, CCDirectorDelegate>
 
 @end
