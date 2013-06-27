@@ -23,6 +23,7 @@
 
 // Add properties here
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+@property (strong, nonatomic) CocosVisualizer *visualizer;
 
 @end
 
@@ -67,7 +68,11 @@
 
     [_backgroundView addSubview:director_.view];
     
-    [director_ runWithScene: [CocosVisualizer scene]];
+    CCScene *scene = [CCScene node];
+	_visualizer = [CocosVisualizer node];
+	[scene addChild: _visualizer];
+
+    [director_ runWithScene: scene];
 //    [director_ setDelegate:self];
     
     [self configureAudioPlayer];
@@ -180,7 +185,7 @@
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     [_audioPlayer setNumberOfLoops:-1];
     [_audioPlayer setMeteringEnabled:YES];
-//    [_visualizer setAudioPlayer:_audioPlayer];
+    [_visualizer setAudioPlayer:_audioPlayer];
   
     [self playPause];   // Play 
 }
@@ -239,7 +244,7 @@
   }
   [_audioPlayer setNumberOfLoops:-1];
   [_audioPlayer setMeteringEnabled:YES];
-//  [_visualizer setAudioPlayer:_audioPlayer];
+  [_visualizer setAudioPlayer:_audioPlayer];
 }
 
 - (void)configureAudioSession {

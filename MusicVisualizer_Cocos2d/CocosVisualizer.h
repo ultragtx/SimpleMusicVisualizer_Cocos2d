@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 #import "cocos2d.h"
 
 @interface CocosVisualizer : CCLayer {
     
 }
 
-+(CCScene *) scene;
+
+- (void)setAudioPlayer:(AVAudioPlayer *)audioPlayer;
 
 @end
