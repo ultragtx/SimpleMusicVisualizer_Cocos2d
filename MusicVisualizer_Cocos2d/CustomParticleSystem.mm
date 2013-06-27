@@ -13,6 +13,18 @@
     MeterTable meterTable;
 }
 
+/*
+ * This method is called in method update: of CCParticleSystem.m near line 599
+ * We overwrite this method here just to inject into the update method, and then
+ * we can change the size of each particle
+ * 
+ * Comparing with the UIKit version: Seems that cocos2d doesn't support child
+ * emitter (which means each partitle that was emitted by the particle system 
+ * is a new emiiter and can emit its own particle), so we cannot use the same
+ * trick as we did with CAEmitterLayer.
+ * 
+ */
+
 - (void)updateQuadWithParticle:(tCCParticle *)particle newPosition:(CGPoint)pos {
     if (_audioPlayer && _audioPlayer.playing) {
         [_audioPlayer updateMeters];

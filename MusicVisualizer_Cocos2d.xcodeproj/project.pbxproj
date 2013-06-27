@@ -142,8 +142,6 @@
 		C12041BD177BD9690016C27D /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = C12041BC177BD9690016C27D /* vec4.c */; };
 		C12041C2177BD9690016C27D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C12041C1177BD9690016C27D /* main.m */; };
 		C12041C5177BD9690016C27D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C12041C4177BD9690016C27D /* AppDelegate.m */; };
-		C12041C8177BD9690016C27D /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C12041C7177BD9690016C27D /* HelloWorldLayer.m */; };
-		C12041CB177BD9690016C27D /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C12041CA177BD9690016C27D /* IntroLayer.m */; };
 		C12041D7177BDAAF0016C27D /* MeterTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C12041D3177BDAAF0016C27D /* MeterTable.cpp */; };
 		C12041D8177BDAAF0016C27D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12041D6177BDAAF0016C27D /* ViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		C12041DA177BDB1D0016C27D /* DemoSong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C12041D9177BDB1D0016C27D /* DemoSong.m4a */; };
@@ -433,10 +431,6 @@
 		C12041C1177BD9690016C27D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C12041C3177BD9690016C27D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C12041C4177BD9690016C27D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C12041C6177BD9690016C27D /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		C12041C7177BD9690016C27D /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
-		C12041C9177BD9690016C27D /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
-		C12041CA177BD9690016C27D /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		C12041D3177BDAAF0016C27D /* MeterTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeterTable.cpp; sourceTree = "<group>"; };
 		C12041D4177BDAAF0016C27D /* MeterTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeterTable.h; sourceTree = "<group>"; };
 		C12041D5177BDAAF0016C27D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -508,10 +502,6 @@
 				C12041D1177BDAAF0016C27D /* Original */,
 				C12041C3177BD9690016C27D /* AppDelegate.h */,
 				C12041C4177BD9690016C27D /* AppDelegate.m */,
-				C12041C6177BD9690016C27D /* HelloWorldLayer.h */,
-				C12041C7177BD9690016C27D /* HelloWorldLayer.m */,
-				C12041C9177BD9690016C27D /* IntroLayer.h */,
-				C12041CA177BD9690016C27D /* IntroLayer.m */,
 				C10BF6DB177C2D6F003D996B /* CustomParticleSystem.h */,
 				C10BF6DC177C2D70003D996B /* CustomParticleSystem.mm */,
 				C10BF6D2177C1BB2003D996B /* CocosVisualizer.h */,
@@ -1110,8 +1100,6 @@
 				C12041BD177BD9690016C27D /* vec4.c in Sources */,
 				C12041C2177BD9690016C27D /* main.m in Sources */,
 				C12041C5177BD9690016C27D /* AppDelegate.m in Sources */,
-				C12041C8177BD9690016C27D /* HelloWorldLayer.m in Sources */,
-				C12041CB177BD9690016C27D /* IntroLayer.m in Sources */,
 				C12041D7177BDAAF0016C27D /* MeterTable.cpp in Sources */,
 				C12041D8177BDAAF0016C27D /* ViewController.m in Sources */,
 				C10BF6D4177C1BB2003D996B /* CocosVisualizer.m in Sources */,
